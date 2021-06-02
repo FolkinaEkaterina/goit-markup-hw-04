@@ -246,7 +246,7 @@ body {
 
 /* list-item */
 
-.list-item::before {
+/* .list-item::before {
   display: block;
   content: '';
   height: 120px;
@@ -259,20 +259,21 @@ body {
 }
 
 .icon-antenna::before {
-  background-image: url(../images/icons.svg/antenna\ 1.svg);
+  background-image: url(../images/antenna\ 1.svg);
 }
 
 .icon-clock::before {
-  background-image: url(../images/icons.svg/clock\ 1.svg);
+  background-image: url(../images/clock\ 1.svg);
 }
 
 .icon-diagram::before {
-  background-image: url(../images/icons.svg/diagram\ 1.svg);
+  background-image: url(../images/diagram\ 1.svg);
 }
 
 .icon-astronaut::before {
-  background-image: url(../images/icons.svg/astronaut\ 1.svg);
-}
+  background-image: url(../images/astronaut\ 1.svg);
+} */
+
 /* Titles */
 
 .hidden-title {
@@ -479,17 +480,23 @@ img {
   margin-bottom: 30px;
 }
 
-.flex-element:hover,
-.flex-element:focus {
-  box-shadow: var(--portfolio-shadow);
-}
-
 .flex-element:nth-child(3n) {
   margin-right: 0;
 }
 
 .flex-element:nth-last-child(-n + 3) {
   margin-bottom: 0;
+}
+
+.flex {
+  display: inline-block;
+  text-decoration: none;
+  color: currentColor;
+}
+
+.flex:hover,
+.flex:focus {
+  box-shadow: var(--portfolio-shadow);
 }
 
 /*  Содержание карточек */
