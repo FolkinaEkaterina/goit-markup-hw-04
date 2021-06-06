@@ -17,6 +17,7 @@
   --gradient: rgba(47, 48, 58, 0.4);
   --portfolio-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   --hero-button-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  --icon-color: #AFB1B8;
 }
 
 html {
@@ -47,7 +48,6 @@ body {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-  /* background-color: #188CE8; */
 }
 
 /* Отмена значков ненумерованного списка, отмена падингов и маржинов */
@@ -63,13 +63,6 @@ body {
 
 .section-head {
   border-bottom: 1px solid var(--border-top-color);
-}
-
-/* nav */
-
-.navigate {
-  display: flex;
-  align-items: center;
 }
 
 /* logo */
@@ -104,12 +97,17 @@ body {
   align-items: center;
 }
 
+.navigate {
+  display: flex;
+}
+
 .site-nav {
   display: flex;
   margin-left: 93px;
 }
 
 .site-nav .nav {
+  display: inline-block;
   color: var(--title-text-color);
 }
 
@@ -118,7 +116,7 @@ body {
 }
 
 .contacts .link {
-  color: var(--primary-text-color);
+  color:currentColor;
 }
 
 .contacts {
@@ -126,7 +124,17 @@ body {
   margin-left: auto;
 } 
 
-.contacts .item + .item  {
+.icon-contacts {
+  display: inline-block;
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.icon-contacts:hover {
+  fill: var(--accent-color);
+}
+
+.contacts .item-contacts + .item-contacts  {
   margin-left: 50px;
 }
 
@@ -134,14 +142,18 @@ body {
 
 .site-nav .nav,
 .contacts .link {
-  display: block;
-  padding-bottom: 32px;
-  padding-top: 32px;
-
+  display: flex;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+  align-items: center;
+}
+
+.site-nav .nav,
+.item-contacts .link {
+  padding-bottom: 32px;
+  padding-top: 32px;
 }
 
 /* nav and contacts hover and focus */
@@ -149,8 +161,8 @@ body {
 .site-nav .nav:hover,
 .site-nav .nav:focus,
 .site-nav .nav.current,
-.contacts .link:hover,
-.contacts .link:focus {
+.item-contacts .link:hover,
+.item-contacts .link:focus {
   color: var(--accent-color);
 }
 
@@ -224,12 +236,24 @@ body {
 /* sections */
 
 .section{
-  /* padding: 94px 215px 0px 215px; */
+
   padding-top: 94px;
 }
 
-/* section, feature-list */
+/* icons */
 
+.icon {
+  fill: var(--primary-text-color);
+  background-color: var(--button-background-color);
+
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  padding: 25px 100px;
+  border-radius: 4px;
+}
+
+/* section, feature-list */
 
 .feature-list {
   display: flex;
@@ -244,37 +268,7 @@ body {
   margin-left: 30px;
 }
 
-/* list-item */
-
-/* .list-item::before {
-  display: block;
-  content: '';
-  height: 120px;
-  background-size: 70px 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--button-background-color);
-  border-radius: 4px;
-  margin-bottom: 30px;
-}
-
-.icon-antenna::before {
-  background-image: url(../images/antenna\ 1.svg);
-}
-
-.icon-clock::before {
-  background-image: url(../images/clock\ 1.svg);
-}
-
-.icon-diagram::before {
-  background-image: url(../images/diagram\ 1.svg);
-}
-
-.icon-astronaut::before {
-  background-image: url(../images/astronaut\ 1.svg);
-} */
-
-/* Titles */
+/* titles */
 
 .hidden-title {
   position: absolute;
@@ -319,7 +313,6 @@ p{
 /* works section */
 
 .works{
-  /* padding: 94px 215px */
   padding-bottom: 94px;
 }
 
@@ -337,7 +330,6 @@ p{
 .team-section {
   background-color: var(--button-background-color);
 
-  /* padding: 94px 215px; */
   padding-bottom: 94px;
 }
 
@@ -350,17 +342,16 @@ p{
   margin-left: 30px;
 }
 
-/* Оформление карточек */
+/* team cards */
+
 .card {
   background-color: var(--white-color);
   box-shadow:var(--shadow-color);
-border-radius: 0px 0px 4px 4px;
-
+  border-radius: 0px 0px 4px 4px;
 
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
-
 }
 
 .name {
@@ -376,11 +367,66 @@ border-radius: 0px 0px 4px 4px;
 .prof {
   font-size: 16px;
   line-height: 1.19;
-  /* text-align: center; */
 }
 
 img {
   display: block;
+}
+
+.team-links {
+  margin: 16px 32px 0px 32px;
+}
+ 
+.team-link {
+  display: inline-block;
+
+  background-color: var(--white-color);
+  fill: var(--icon-color);
+
+  border-radius: 50%;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
+}
+
+.team-link:hover,
+.team-link:focus {
+  background-color: var(--accent-color);
+  fill: var(--white-color);
+}
+
+/* our clients section */
+
+.our-clients-section {
+  padding-bottom: 94px;
+}
+
+.our-clients {
+  display: flex;
+  justify-content: center;
+}
+
+.clients {
+  display: flex;
+}
+
+.client + .client {
+  margin-left: 30px;
+}
+
+.client-icon {
+  fill: var(--icon-color);
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+  padding: 16px 32px;
+}
+
+.client-icon:hover,
+.client-icon:focus {
+  fill: var(--accent-color);
+  border: 1px solid var(--accent-color);
 }
 
 /* footer */
@@ -415,6 +461,64 @@ img {
 
 .par {
   margin-bottom: 9px;
+}
+
+/* Footer container */
+
+.footer-container{
+  display: flex;
+}
+
+.footer-address {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  margin-top: 12px;
+}
+
+.footer-title{
+  color: var(--white-color);
+
+  text-transform: uppercase;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+
+  margin:0;
+  margin-bottom: 20px;
+}
+
+.icon-list {
+  display: flex;
+}
+
+.i-link {
+  display: inline-block;
+  align-items: flex-start;
+
+  fill: var(--white-color);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  border-radius: 50%;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
+}
+
+.i-link:hover,
+.i-link:focus {
+  background-color: var(--accent-color);
+}
+
+.icons + .icons {
+  margin-left: 10px;
 }
 
 /* main portfolio.html */
